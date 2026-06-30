@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copa na Cozinha 2026</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Copa na Cozinha 2026">
+      <span class="brand-mark">26</span>
+      <span>Copa na Cozinha</span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#receitas">Receitas</a>
+      <a href="#aulas">Vídeo-aulas</a>
+      <a href="#feedbacks">Feedbacks</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-overlay">
+        <p class="kicker">Canadá · México · Estados Unidos</p>
+        <h1>Copa do Mundo 2026 em 48 receitas típicas</h1>
+        <p class="hero-copy">Um roteiro gastronômico de fase de grupos: pratos tradicionais, fotos de referência, preparo detalhado, videoaulas e links para cozinhar enquanto a bola rola.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#receitas">Ver receitas</a>
+          <a class="button secondary" href="#aulas">Abrir aulas</a>
+        </div>
+      </div>
+      <div class="score-strip" aria-label="Resumo do site">
+        <span><strong>48</strong> receitas</span>
+        <span><strong>12</strong> grupos</span>
+        <span><strong>4.9</strong> média</span>
+      </div>
+    </section>
+
+    <section class="cup-strip" aria-label="Tema Copa do Mundo">
+      <div>
+        <span class="cup-code">FIFA 26</span>
+        <strong>Fase de grupos gastronômica</strong>
+      </div>
+      <div class="host-cities">
+        <span>Canadá</span>
+        <span>México</span>
+        <span>Estados Unidos</span>
+      </div>
+      <div>
+        <strong>Do apito inicial à sobremesa</strong>
+        <span>Receitas para acompanhar cada seleção</span>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div>
+        <p class="section-label">Cardápio oficial do torcedor</p>
+        <h2>Receitas com alma de estádio e acabamento de restaurante</h2>
+      </div>
+      <p>Use os filtros para montar sua rota gastronômica pela Copa. Cada cartão traz foto, tempo, dificuldade, rendimento, ingredientes com quantidades, preparo detalhado e links de vídeo.</p>
+    </section>
+
+    <section id="receitas" class="section recipes-section">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Seleções classificadas</p>
+          <h2>Uma receita típica para cada país</h2>
+        </div>
+        <div class="filters" aria-label="Filtros de receitas">
+          <input id="searchInput" type="search" placeholder="Buscar país ou prato">
+          <select id="groupFilter" aria-label="Filtrar por grupo">
+            <option value="all">Todos os grupos</option>
+          </select>
+          <select id="difficultyFilter" aria-label="Filtrar por dificuldade">
+            <option value="all">Todas as dificuldades</option>
+            <option value="Fácil">Fácil</option>
+            <option value="Média">Média</option>
+            <option value="Avançada">Avançada</option>
+          </select>
+        </div>
+      </div>
+      <div id="recipeGrid" class="recipe-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="aulas" class="section lesson-section">
+      <div class="lesson-copy">
+        <p class="section-label">Vídeo-aulas</p>
+        <h2>Acompanhe a receita como se estivesse em uma cozinha de transmissão</h2>
+        <p>Escolha uma receita no catálogo ou selecione abaixo. O player mostra uma aula guiada com etapas, tempo e checklist para reproduzir o prato.</p>
+      </div>
+      <div class="lesson-studio">
+        <div class="video-frame">
+          <div class="video-top">
+            <span class="live-dot"></span>
+            <span>Aula em destaque</span>
+          </div>
+          <button id="playButton" class="play-button" aria-label="Iniciar aula">▶</button>
+          <div class="video-title">
+            <strong id="lessonRecipe">Tacos al pastor</strong>
+            <span id="lessonCountry">México · Grupo A</span>
+          </div>
+        </div>
+        <div class="lesson-panel">
+          <select id="lessonSelect" aria-label="Selecionar vídeo-aula"></select>
+          <ol id="lessonSteps"></ol>
+          <a id="tutorialLink" class="button tutorial-link" href="#" target="_blank" rel="noopener">Abrir videoaula</a>
+          <a id="recipeLink" class="button lesson-recipe-link" href="#" target="_blank" rel="noopener">Abrir link da receita</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedbacks" class="section feedback-section">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Arquibancada da cozinha</p>
+          <h2>Feedbacks dos torcedores</h2>
+        </div>
+        <form id="feedbackForm" class="feedback-form">
+          <input id="nameInput" type="text" placeholder="Seu nome" required>
+          <select id="ratingInput" aria-label="Nota">
+            <option value="5">5 estrelas</option>
+            <option value="4">4 estrelas</option>
+            <option value="3">3 estrelas</option>
+          </select>
+          <textarea id="commentInput" placeholder="Conte como ficou sua receita" required></textarea>
+          <button class="button primary" type="submit">Enviar feedback</button>
+        </form>
+      </div>
+      <div id="feedbackList" class="feedback-list"></div>
+    </section>
+  </main>
+
+  <dialog id="recipeDialog" class="recipe-dialog">
+    <button class="close-dialog" aria-label="Fechar">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <footer>
+    <strong>Copa na Cozinha 2026</strong>
+    <span>Site demonstrativo com receitas culturais e aulas guiadas.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
